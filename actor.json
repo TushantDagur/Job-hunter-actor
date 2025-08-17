@@ -1,0 +1,34 @@
+{
+  "actorSpecification": 1,
+  "name": "job-hunter-actor",
+  "title": "Job Hunter Actor",
+  "description": "Hunt jobs from multiple platforms and upload resume.",
+  "version": "0.0",
+  "storages": {
+    "dataset": {},
+    "keyValueStore": {},
+    "requestQueue": {}
+  },
+  "input": {
+    "type": "object",
+    "properties": {
+      "searchQuery": {
+        "title": "Search Query",
+        "type": "string",
+        "description": "Job title or keyword to search."
+      },
+      "platforms": {
+        "title": "Platforms",
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Platforms to search jobs from (e.g., indeed, linkedin)."
+      },
+      "uploadResume": {
+        "title": "Resume (Base64)",
+        "type": "string",
+        "description": "Base64-encoded resume file to upload.",
+        "nullable": true
+      }
+    }
+  }
+}
