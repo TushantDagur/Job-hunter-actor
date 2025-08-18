@@ -1,55 +1,40 @@
 {
-  "title": "Job Hunter Actor",
-  "type": "object",
-  "schemaVersion": 1,
-  "properties": {
-    "query": {
-      "title": "Job Title / Keywords",
-      "type": "string",
-      "default": "Software Engineer"
+    "title": "Job Hunter Actor",
+    "description": "Finds job listings from the web based on keywords and location.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "keywords": {
+            "title": "Job Keywords",
+            "type": "string",
+            "description": "Enter keywords to search for jobs (e.g. Software Engineer, Data Analyst).",
+            "editor": "textfield",
+            "default": "Software Engineer"
+        },
+        "location": {
+            "title": "Job Location",
+            "type": "string",
+            "description": "Enter the location for job search (e.g. New York, Remote, India).",
+            "editor": "textfield",
+            "default": "Remote"
+        },
+        "maxResults": {
+            "title": "Maximum Results",
+            "type": "integer",
+            "description": "Maximum number of job listings to scrape.",
+            "editor": "number",
+            "default": 20
+        },
+        "includeDescription": {
+            "title": "Include Job Descriptions",
+            "type": "boolean",
+            "description": "Whether to include full job descriptions in results.",
+            "editor": "checkbox",
+            "default": true
+        }
     },
-    "location": {
-      "title": "Location",
-      "type": "string",
-      "default": "Remote",
-      "description": "Use 'Remote' for remote roles; platform support varies."
-    },
-    "limit": {
-      "title": "Max jobs per source",
-      "type": "integer",
-      "default": 20,
-      "minimum": 1,
-      "maximum": 200
-    },
-    "sources": {
-      "title": "Sources",
-      "type": "array",
-      "description": "Pick which platforms to search",
-      "editor": "checkboxes",
-      "items": {
-        "type": "string",
-        "enum": ["indeed", "remoteok"]
-      },
-      "default": ["indeed", "remoteok"]
-    },
-    "resumeFile": {
-      "title": "Resume file (PDF, DOCX, TXT)",
-      "type": "string",
-      "editor": "file",
-      "description": "Upload your resume to auto-extract skills for ranking"
-    },
-    "extraKeywords": {
-      "title": "Extra resume keywords (optional)",
-      "type": "array",
-      "items": { "type": "string" },
-      "default": ["JavaScript", "React", "Node.js", "SQL"]
-    },
-    "notifyEmail": {
-      "title": "Email to notify (optional)",
-      "type": "string",
-      "format": "email",
-      "description": "If provided, actor will send a summary email via Apify notifications (if configured)."
-    }
-  },
-  "required": ["query"]
+    "required": [
+        "keywords",
+        "location"
+    ]
 }

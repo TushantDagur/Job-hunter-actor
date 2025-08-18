@@ -1,12 +1,11 @@
 {
-  "actorSpecification": 1,
   "name": "job-hunter-actor",
   "title": "Job Hunter Actor",
-  "description": "Hunt jobs from multiple platforms and upload resume.",
-  "version": "0.1",
+  "description": "Scrapes job listings from multiple sources like Indeed and RemoteOK.",
+  "version": "0.0",
   "storages": {
-    "dataset": {},
-    "keyValueStore": {},
-    "requestQueue": {}
-  }
+    "keyValueStore": "default"
+  },
+  "actorSpecification": 1,
+  "actorKeyValueStoreSchemaVersion": "1"
 }
