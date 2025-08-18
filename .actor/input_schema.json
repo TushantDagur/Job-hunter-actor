@@ -1,0 +1,55 @@
+{
+  "title": "Job Hunter Actor",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "query": {
+      "title": "Job Title / Keywords",
+      "type": "string",
+      "default": "Software Engineer"
+    },
+    "location": {
+      "title": "Location",
+      "type": "string",
+      "default": "Remote",
+      "description": "Use 'Remote' for remote roles; platform support varies."
+    },
+    "limit": {
+      "title": "Max jobs per source",
+      "type": "integer",
+      "default": 20,
+      "minimum": 1,
+      "maximum": 200
+    },
+    "sources": {
+      "title": "Sources",
+      "type": "array",
+      "description": "Pick which platforms to search",
+      "editor": "checkboxes",
+      "items": {
+        "type": "string",
+        "enum": ["indeed", "remoteok"]
+      },
+      "default": ["indeed", "remoteok"]
+    },
+    "resumeFile": {
+      "title": "Resume file (PDF, DOCX, TXT)",
+      "type": "string",
+      "editor": "file",
+      "description": "Upload your resume to auto-extract skills for ranking"
+    },
+    "extraKeywords": {
+      "title": "Extra resume keywords (optional)",
+      "type": "array",
+      "items": { "type": "string" },
+      "default": ["JavaScript", "React", "Node.js", "SQL"]
+    },
+    "notifyEmail": {
+      "title": "Email to notify (optional)",
+      "type": "string",
+      "format": "email",
+      "description": "If provided, actor will send a summary email via Apify notifications (if configured)."
+    }
+  },
+  "required": ["query"]
+}

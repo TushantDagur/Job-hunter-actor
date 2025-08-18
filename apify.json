@@ -1,7 +1,0 @@
-{
-  "name": "job-hunter-actor",
-  "version": "0.0.1",
-  "buildTag": "latest",
-  "environmentVariables": {},
-  "dockerfile": "./Dockerfile"
-}
